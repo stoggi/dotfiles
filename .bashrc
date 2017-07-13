@@ -3,10 +3,6 @@
 # Enable bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# Enable shell compatibility for pipenv so it can show the active virtialenv
-# https://github.com/kennethreitz/pipenv/issues/269
-export PIPENV_SHELL_COMPAT=true
-
 # Terminal colors enabled for osx native commands
 export CLICOLOR=1
 
@@ -24,13 +20,13 @@ if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
 fi
 
 # Create a dotfiles function that maps git to the bare dotfiles repo, and home directory
-if [ -d $HOME/projects/dotfiles ]; then
+if [ -d $HOME/.dotfiles ]; then
     function dotfiles {
-        /usr/local/bin/git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME $@
+        /usr/local/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
     }
 fi
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
-if [ -f $HOME/projects/public/liquidprompt/liquidprompt ]; then
-    [[ $- = *i* ]] && source $HOME/projects/public/liquidprompt/liquidprompt
+if [ -f /usr/local/share/liquidprompt ]; then
+    [[ $- = *i* ]] && source /usr/local/share/liquidprompt
 fi
