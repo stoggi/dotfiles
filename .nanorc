@@ -1,9 +1,11 @@
+# General nano settings
 set autoindent
 set regexp
 set smooth
 set tabsize 4
 set tabstospaces
 
+# Other language nanorc files
 include /usr/local/share/nano/asm.nanorc
 include /usr/local/share/nano/autoconf.nanorc
 include /usr/local/share/nano/awk.nanorc
