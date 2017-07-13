@@ -20,14 +20,14 @@ export PS1='\[\033[01;34m\]\w\[\033[01;31m\]$(__git_ps1)\[\033[01;34m\] \$\[\033
 
 # Chruby https://github.com/postmodern/chruby
 if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
-	source /usr/local/opt/chruby/share/chruby/chruby.sh
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 
 # Create a dotfiles function that maps git to the bare dotfiles repo, and home directory
 if [ -d $HOME/projects/dotfiles ]; then
-	function dotfiles {
-	    /usr/local/bin/git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME $@
-	}
+    function dotfiles {
+        /usr/local/bin/git --git-dir=$HOME/projects/dotfiles --work-tree=$HOME $@
+    }
 fi
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
